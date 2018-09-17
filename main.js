@@ -605,12 +605,12 @@ const drawScene = () => {
     mat4.perspective(pMatrix, glMatrix.toRadian(45), gl.viewportWidth/gl.viewportHeight, 0.1, 100.0)
 
     mat4.identity(mvMatrix)
-    mat4.translate(mvMatrix, mvMatrix, [-6.0, 4.0, -20.0])
+    mat4.translate(mvMatrix, mvMatrix, [-1.5, 4.0, -20.0])
 
     mvPushMatrix()
 
-    mat4.rotate(mvMatrix, mvMatrix, glMatrix.toRadian(rR), [0.1, 0.0, 0.0])
-    mat4.translate(mvMatrix, mvMatrix, [0.0, -3.0, 0.0])
+    mat4.rotate(mvMatrix, mvMatrix, glMatrix.toRadian(rR), [1.0, 0.0, 0.0])
+    mat4.translate(mvMatrix, mvMatrix, [0.0, -3.0, -0.5])
     
     gl.bindBuffer(gl.ARRAY_BUFFER, RPositionBuffer)
     gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, RPositionBuffer.itemSize, gl.FLOAT, false, 0, 0)
@@ -624,12 +624,12 @@ const drawScene = () => {
     mvPopMatrix()
 
 
-    mat4.translate(mvMatrix, mvMatrix, [10.0, -11.0, 0.0])
+    mat4.translate(mvMatrix, mvMatrix, [1.5, -11.0, 0.0])
 
     mvPushMatrix()
 
     mat4.rotate(mvMatrix, mvMatrix, glMatrix.toRadian(rI), [0.0, 1.0, 0.0])
-    mat4.translate(mvMatrix, mvMatrix, [-0.5, 0.0, 0.0])
+    mat4.translate(mvMatrix, mvMatrix, [-0.5, 0.0, -0.5])
     
     gl.bindBuffer(gl.ARRAY_BUFFER, IPositionBuffer)
     gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, IPositionBuffer.itemSize, gl.FLOAT, false, 0, 0)
